@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "LZCartViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -17,6 +17,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    self.window =[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor=[UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+    LZCartViewController * vc = [[LZCartViewController alloc]init];
+    UINavigationController * navVC = [[UINavigationController alloc] initWithRootViewController:vc];
+    self.window.rootViewController = navVC;
     return YES;
 }
 
